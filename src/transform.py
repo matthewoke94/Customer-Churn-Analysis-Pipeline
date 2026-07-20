@@ -2,10 +2,14 @@ import pandas as pd
 
 df = pd.read_csv("data/raw_churn.csv")
 
-df.drop_duplicates(inplace=True)
+# Remove duplicates
+df = df.drop_duplicates()
 
-df["MonthlyCharges"] = df["MonthlyCharges"].round(2)
+# Round numeric columns
+df["monthly_charges"] = df["monthly_charges"].round(2)
+df["total_charges"] = df["total_charges"].round(2)
 
+# Save cleaned data
 df.to_csv("data/clean_churn.csv", index=False)
 
-print("Transformation Complete")
+print("Data transformed successfully!")

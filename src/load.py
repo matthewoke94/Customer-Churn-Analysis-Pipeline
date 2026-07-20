@@ -1,4 +1,3 @@
-cat > src/load.py
 import pandas as pd
 from src.database import engine
 
@@ -11,3 +10,4 @@ df.to_sql(
     index=False
 )
 
+print("Loaded Successfully")
